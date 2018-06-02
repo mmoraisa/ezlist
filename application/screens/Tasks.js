@@ -5,6 +5,9 @@ import { connect } from 'react-redux'
 import { getTasks, setInitialTasks } from '../helpers/AsyncStorageControl'
 import { loadTasks } from '../actions/tasksActions'
 
+import TaskList from '../components/tasks/TaskList'
+import EmptyTaskList from '../components/tasks/EmptyTaskList';
+
 class Tasks extends Component {
 
     componentWillMount () {
@@ -19,8 +22,12 @@ class Tasks extends Component {
     render () {
         const { tasks } = this.props
         return (
-            <View>
-                <Text>{JSON.stringify(tasks)}</Text>
+            <View style={{ flex: 1 }}>
+                {
+                    Object.keys(tasks).length === 0
+                    ? <EmptyTaskList />
+                    : <TaskList tasks={ tasks } />
+                }
             </View>
         )
     }
