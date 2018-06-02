@@ -1,6 +1,7 @@
 import { createMaterialTopTabNavigator } from 'react-navigation'
 
 import Tasks from '../../screens/Tasks'
+import NewTask from '../../screens/NewTask'
 
 import { white, blue, darkgray, lightblue } from '../../helpers/Colors'
 
@@ -9,6 +10,12 @@ const Menu = createMaterialTopTabNavigator({
         screen: Tasks,
         navigationOptions: {
             tabBarLabel: 'Tarefas'
+        }
+    },
+    NewTask: {
+        screen: NewTask,
+        navigationOptions: {
+            tabBarLabel: 'Nova Tarefa'
         }
     }
 },{

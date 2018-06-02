@@ -1,12 +1,12 @@
 import React from 'react'
-import { FlatList } from 'react-native'
+import { FlatList, View, Text } from 'react-native'
 
 const TaskList = ({ tasks }) => {
   return (
-    <FlatList
-      data={ tasks }
-      renderItem={({item}) => <Text>{item.key}</Text>}
-    />
+    <View style={{ flex: 1 }}>
+      <Text>{JSON.stringify(tasks)}</Text>
+      
+    </View>
   )
 }
 

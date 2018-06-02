@@ -1,22 +1,24 @@
-import { ADD_TASK } from '../actions/actionTypes'
+import { ADD_TASK, LOAD_TASKS } from '../actions/actionTypes'
 
 const INITIAL_STATE = {}
 
-function tasksReducer(tasks = INITIAL_STATE, action){
-    const { task } = action
+function tasksReducer(state = INITIAL_STATE, action){
+    const { task, tasks } = action
 
     switch(action.type){
         case ADD_TASK:
-            if(tasks.hasOwnProperty(task.title)){
-                return tasks
+            if(state.hasOwnProperty(task.title)){
+                return state
             } else{
                 return {
-                    ...tasks,
+                    ...state,
                     [task.title]: task
                 }
             }
-        default:
+        case LOAD_TASKS:
             return tasks
+        default:
+            return state
     }
 }
 
