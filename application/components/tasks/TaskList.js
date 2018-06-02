@@ -1,14 +1,22 @@
 import React from 'react'
-import { ScrollView } from 'react-native'
+import { ScrollView, TouchableOpacity } from 'react-native'
 
 import Task from './Task'
 
-const TaskList = ({ tasks }) => {
+const TaskList = ({ tasks, showTask }) => {
   return (
     <ScrollView style={{ flex: 1 }}>
         {
             Object.keys(tasks).map(taskTitle => {
-                return (<Task key={ taskTitle } task={ tasks[taskTitle] } />)
+                return (
+                    <TouchableOpacity
+                        key={ taskTitle }
+                        activeOpacity={.8}
+                        onPress={ () => { showTask(tasks[taskTitle]) } }
+                    >
+                        <Task task={ tasks[taskTitle] } />
+                    </TouchableOpacity>
+                )
             })
         }
     </ScrollView>

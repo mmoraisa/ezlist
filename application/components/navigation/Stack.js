@@ -2,7 +2,8 @@ import React from 'react'
 import { createStackNavigator } from 'react-navigation'
 
 import Home from '../../screens/Home'
-import { blue, lightblue, white, darkgray } from '../../helpers/Colors';
+import TaskDetails from '../../screens/TaskDetails'
+import { blue, lightblue, white, darkgray } from '../../helpers/Colors'
 
 const Stack = createStackNavigator({
     Home: {
@@ -10,6 +11,9 @@ const Stack = createStackNavigator({
         navigationOptions: {
             header: null
         }
+    },
+    TaskDetails: {
+        screen: TaskDetails
     }
 },{
     navigationOptions: {

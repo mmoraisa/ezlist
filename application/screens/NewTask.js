@@ -61,7 +61,7 @@ class NewTask extends Component{
             return false
         }
 
-        const task = { title: name, description, finalDate }
+        const task = { title: name, description, finalDate, subtasks: {} }
 
         addTaskToStorage(task)
             .then(() => {

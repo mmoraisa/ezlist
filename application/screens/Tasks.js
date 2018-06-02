@@ -19,6 +19,11 @@ class Tasks extends Component {
             .catch((err) => console.log(err))
     }
 
+    showTask = (task) => {
+        const { stack } = this.props.screenProps
+        stack.navigate('TaskDetails', { taskTitle: task.title })
+    }
+
     render () {
         const { tasks } = this.props
         return (
@@ -26,7 +31,7 @@ class Tasks extends Component {
                 {
                     Object.keys(tasks).length === 0
                     ? <EmptyTaskList />
-                    : <TaskList tasks={ tasks } />
+                    : <TaskList tasks={ tasks } showTask={ this.showTask } />
                 }
             </View>
         )

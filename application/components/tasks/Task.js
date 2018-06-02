@@ -7,29 +7,21 @@ import { lightgray } from '../../helpers/Colors'
 
 const Task = ({ task }) => {
   return (
-    <TouchableOpacity
-        style={ styles.taskButton }
-        activeOpacity={.8}
-    >
-      <View style={ styles.task }>
-        <PercentageIndicator
-          actual={50}
-          maximum={100}
-          style={ styles.percentageIndicator }
-          />
-        <View style={ styles.taskInfo }>
-          <Text style={ styles.taskTitle }>{ task.title }</Text>
-          <Text style={ styles.taskDescription }>{ task.description }</Text>
-        </View>
+    <View style={ styles.task }>
+      <PercentageIndicator
+        actual={50}
+        maximum={100}
+        style={ styles.percentageIndicator }
+        />
+      <View style={ styles.taskInfo }>
+        <Text style={ styles.taskTitle }>{ task.title }</Text>
+        <Text style={ styles.taskDescription }>{ task.description }</Text>
       </View>
-    </TouchableOpacity>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  taskButton: {
-
-  },
   task: {
     flex: 1,
     flexDirection: 'row',

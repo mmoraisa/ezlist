@@ -6,7 +6,8 @@ const INITIAL_TASKS = {}
 export function setInitialTasks() {
     return AsyncStorage.getItem(EZLIST_STORAGE_TASKS_KEY)
         .then((tasks) => {
-            //if(decks) AsyncStorage.clear()
+            //if(decks)
+                //AsyncStorage.clear()
             if(!tasks)
                 return saveTasks(INITIAL_TASKS)
         })
