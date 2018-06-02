@@ -24,6 +24,20 @@ export function addTaskToStorage(task){
     }))
 }
 
+export async function addSubtaskToTask(subtask,task){
+    task.subtasks[subtask.title] = subtask
+    return AsyncStorage.mergeItem(EZLIST_STORAGE_TASKS_KEY, JSON.stringify({
+        [task.title]: task,
+    }))
+}
+
+export async function toggleSubtaskCompletion(complete,subtask,task){
+    task.subtasks[subtask.title].complete = complete
+    return AsyncStorage.mergeItem(EZLIST_STORAGE_TASKS_KEY, JSON.stringify({
+        [task.title]: task,
+    }))
+}
+
 export function saveTasks(tasks){
     return AsyncStorage.setItem(EZLIST_STORAGE_TASKS_KEY, JSON.stringify(tasks))
 }
