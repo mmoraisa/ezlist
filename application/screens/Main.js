@@ -2,6 +2,7 @@ import React from 'react'
 import { Text, View } from 'react-native'
 
 import EzlistStatusBar from '../components/general/EzlistStatusBar'
+import Stack from '../components/navigation/Stack'
 import { black } from '../helpers/Colors'
 
 const Main = () => {
@@ -11,7 +12,7 @@ const Main = () => {
                 backgroundColor={ black }
                 barStyle='light-content'
             />
-            <Text>Main</Text>
+            <Stack />
         </View>
     )
 }
