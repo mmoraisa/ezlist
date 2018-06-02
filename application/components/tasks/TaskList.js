@@ -1,12 +1,17 @@
 import React from 'react'
-import { FlatList, View, Text } from 'react-native'
+import { ScrollView } from 'react-native'
+
+import Task from './Task'
 
 const TaskList = ({ tasks }) => {
   return (
-    <View style={{ flex: 1 }}>
-      <Text>{JSON.stringify(tasks)}</Text>
-      
-    </View>
+    <ScrollView style={{ flex: 1 }}>
+        {
+            Object.keys(tasks).map(taskTitle => {
+                return (<Task key={ taskTitle } task={ tasks[taskTitle] } />)
+            })
+        }
+    </ScrollView>
   )
 }
 
