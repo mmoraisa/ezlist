@@ -6,11 +6,18 @@ import PercentageIndicator from '../general/PercentageIndicator';
 import { lightgray } from '../../helpers/Colors'
 
 const Task = ({ task }) => {
+
+  const actual = Object.keys(task.subtasks)
+                  .filter(subtaskTitle => task.subtasks[subtaskTitle].completed)
+                  .reduce((acc,subtaskTitle) => acc + task.subtasks[subtaskTitle].timeEstimated, 0)
+  const max = Object.keys(task.subtasks)
+                  .reduce((acc,subtaskTitle) => acc + task.subtasks[subtaskTitle].timeEstimated, 0)
+
   return (
     <View style={ styles.task }>
       <PercentageIndicator
-        actual={50}
-        maximum={100}
+        actual={ actual }
+        maximum={ max }
         style={ styles.percentageIndicator }
         />
       <View style={ styles.taskInfo }>
@@ -38,7 +45,7 @@ const styles = StyleSheet.create({
     marginLeft: 20
   },
   taskTitle: {
-
+    fontWeight: 'bold'
   },
   taskDescription: {
     

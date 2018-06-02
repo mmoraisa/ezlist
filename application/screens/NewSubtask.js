@@ -45,22 +45,27 @@ class NewSubtask extends Component{
         const { addSubtask, navigation, screenProps } = this.props
         const { task } = screenProps
 
-        if(name.length == 0){
+        if(name.length === 0){
             alert('Você precisa preencher o nome da subtarefa antes de salvar')
             return false
         }
 
-        if(description.length == 0){
+        if(description.length === 0){
             alert('Você precisa preencher a descrição da subtarefa antes de salvar')
             return false
         }
 
-        if(timeEstimated == 0){
+        if(timeEstimated === 0 || timeEstimated.length === 0){
             alert('Você precisa preencher o tempo estimado da subtarefa antes de salvar')
             return false
         }
 
-        const subtask = { title: name, description, timeEstimated, completed: false }
+        const subtask = {
+            title: name,
+            description,
+            timeEstimated: parseInt(timeEstimated),
+            completed: false
+        }
         
         addSubtaskToTask(subtask,task)
             .then(() => {

@@ -10,10 +10,10 @@ class Substasks extends Component {
         const { task } = this.props.screenProps
         return (
             <View style={ styles.view }>
-                <View style={{ flex: 1 }}>
+                <View style={{ flex: 3 }}>
                     <Task task={ task } />
                 </View>
-                <View style={{ flex: 5 }}>
+                <View style={{ flex: 10 }}>
                     {
                         Object.keys(task.subtasks).length === 0
                         ? <EmptySubtaskList />
