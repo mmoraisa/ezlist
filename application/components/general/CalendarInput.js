@@ -17,8 +17,9 @@ class CalendarInput extends Component {
                 date: new Date()
             });
             if (action !== DatePickerAndroid.dismissedAction){
+                const dayToRender = day < 10 ? '0' + day : day
                 const monthToRender = month < 9 ? '0' + (month + 1) : month + 1
-                return `${day}/${monthToRender}/${year}`
+                return `${dayToRender}/${monthToRender}/${year}`
             }
         } catch ({code, message}) {
             console.warn('Não foi possível abrir o calendário', message);
