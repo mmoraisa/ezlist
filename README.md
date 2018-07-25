@@ -2,7 +2,7 @@
 
 A basic todo app to manage my daily tasks made with React Native.
   
-![Ezlist](https://s3.amazonaws.com/in3d-site/portfolio/prj_ezlist.png "Ezlist")
+![Ezlist](https://s3.amazonaws.com/in3d-site/portfolio/prj_ezlists.png "Ezlist")
 
 ### How to run
 
